@@ -12,7 +12,7 @@ import { BUILDINGS_IMG, ImageCard } from "@/constants/constants";
 
 export default function Portfolio() {
   return (
-    <Section>
+    <Section id="portfolio" /*className="bg-secondary-50 text-stone-50"*/>
       <Heading>Our Work</Heading>
       {/* Scrolling Gallery */}
       <div className={"flex h-[80vh] w-full flex-col gap-8 overflow-y-auto"}>
@@ -38,7 +38,7 @@ function Carousel({ slides }: { slides: React.ReactNode[] }) {
 
 function Slide({ image }: { image: ImageCard }) {
   return (
-    <div className={"flex shrink-0 grow-0 basis-full h-full w-full flex-col gap-2"}>
+    <div className={"flex shrink-0 grow-0 basis-full h-full w-full flex-col gap-2 md:basis-1/3"}>
       <Image
         src={image.src}
         width={600}

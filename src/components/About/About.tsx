@@ -9,7 +9,7 @@ import { WORK_DESCRIPTIONS as workDescriptions } from "@constants";
 
 export default function About() {
   return (
-    <Section>
+    <Section id="about-us">
       <Heading>{"Why Choose Us?"}</Heading>
       <p>
         {
