@@ -1,11 +1,14 @@
+"use client"
+
 import Image from "next/image";
+import Autoplay from "embla-carousel-autoplay";
+import useEmblaCarousel from "embla-carousel-react";
 
 // Internal dependencies
-import Heading from "@/components/Heading";
-import Section from "@/components/Section";
+import Heading from "@components/Heading";
+import Section from "@components/Section";
+import { BUILDINGS_IMG, ImageCard } from "@/constants/constants";
 
-// Constants
-import { BUILDINGS_IMG, ImageCard } from "@constants";
 
 export default function Portfolio() {
   return (
@@ -13,27 +16,43 @@ export default function Portfolio() {
       <Heading>Our Work</Heading>
       {/* Scrolling Gallery */}
       <div className={"flex h-[80vh] w-full flex-col gap-8 overflow-y-auto"}>
-        {BUILDINGS_IMG.map((image: ImageCard, index) => {
-          return (
-            <div key={index} className={"flex h-full w-full flex-col gap-2"}>
-              <Image
-                src={image.src}
-                width={600}
-                height={1200}
-                alt={image.alt}
-                className={"aspect-square w-full rounded-xl object-cover"}
-              />
-              <div className={"flex h-1/4 flex-col"}>
-                <h4 className="heading text-4xl font-medium">{image.title}</h4>
-                <h2 className="heading text-xl font-normal text-stone-500">
-                  {image.location}
-                </h2>
-                <p className="opacity-80">{image.description}</p>
-              </div>
-            </div>
-          );
-        })}
+        <Carousel
+          slides={BUILDINGS_IMG.map((image: ImageCard, index) => (
+            <Slide key={index} image={image} />
+          ))}
+        />
       </div>
     </Section>
+  );
+}
+
+function Carousel({ slides }: { slides: React.ReactNode[] }) {
+  const [carouselRef] = useEmblaCarousel({ loop: true }, [Autoplay({ stopOnInteraction: false })]);
+
+  return (
+    <div ref={carouselRef} className="h-full overflow-x-clip">
+      <div className="flex h-full">{slides}</div>
+    </div>
+  );
+}
+
+function Slide({ image }: { image: ImageCard }) {
+  return (
+    <div className={"flex shrink-0 grow-0 basis-full h-full w-full flex-col gap-2"}>
+      <Image
+        src={image.src}
+        width={600}
+        height={1200}
+        alt={image.alt}
+        className={"aspect-square w-full px-2 h-3/4 rounded-xl object-cover"}
+      />
+      <div className={"flex flex-col px-2"}>
+        <h4 className="heading text-4xl font-medium">{image.title}</h4>
+        <h2 className="heading text-xl font-normal text-stone-500">
+          {image.location}
+        </h2>
+        <p className="opacity-80">{image.description}</p>
+      </div>
+    </div>
   );
 }

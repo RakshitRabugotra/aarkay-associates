@@ -9,7 +9,7 @@ export default function ContactUs() {
           {"Book an appointment now, make your dream place a reality!"}
         </span>
         <a className="rounded-2xl bg-stone-100 bg-opacity-80 px-6 py-4 text-center text-stone-800">
-          Book an Appointment
+          {"Book an Appointment"}
         </a>
       </div>
     </Section>
