@@ -37,7 +37,7 @@ export default function Navbar() {
 
       {/* The book demo */}
       <div className="inline-flex items-center gap-4">
-        <a className="text-s">Book a Demo</a>
+        <a className="text-base rounded-lg font-semibold text-stone-900 border-solid border-2 border-stone-300 bg-stone-300 p-2">Book a Demo</a>
 
         {/* Contact Us if the screen is large enough, else hamburger */}
         <a
@@ -47,7 +47,7 @@ export default function Navbar() {
           Contact Us
         </a>
 
-        <a onClick={() => setShow(prev => !prev)} className="md:hidden z-10 rounded bg-stone-900 p-2 px-4 text-stone-50">
+        <a onClick={() => setShow(prev => !prev)} className="md:hidden rounded-lg font-semibold z-10 text-base bg-stone-900 px-4 text-stone-100 border-solid border-2 border-stone-900 p-2">
           {show ? "Close" : "Menu"}
         </a>
       </div>
