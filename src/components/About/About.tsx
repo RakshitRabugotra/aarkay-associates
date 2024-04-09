@@ -1,4 +1,7 @@
+"use client"
+
 import { twMerge } from "tailwind-merge";
+import { animated, useInView } from "react-spring";
 
 // Internal Dependencies
 import Heading from "@components/Heading";
@@ -8,24 +11,39 @@ import Section from "@components/Section";
 import { WORK_DESCRIPTIONS as workDescriptions } from "@constants";
 
 export default function About() {
+
+  // Animate when in view
+  const [ref, springs] = useInView(
+    () => ({
+      from: {
+        opacity: 0.5,
+        transform: "translateY(20%)",
+      },
+      to: {
+        opacity: 1,
+        transform: "translateY(0%)",
+      },
+  }))
+
   return (
-    <Section id="about-us">
-      <Heading>{"Why Choose Us?"}</Heading>
-      <p>
-        {
-          "With a proven track record of excellence, unparalleled attention to detail, and a passion for Discover why clients choose us as their trusted partner in building dreams into reality."
-        }
-      </p>
+    <Section id="about-us" className="flex flex-col h-full md:flex-row md:items-stretch">
+
+      <div className="md:grow-0 md:basis-2/3 md:pr-4">
+        <Heading>{"Why Choose Us?"}</Heading>
+        <animated.p className="md:mt-12">
+          {"With a proven track record of excellence, unparalleled attention to detail, and a passion for Discover why clients choose us as their trusted partner in building dreams into reality."}
+        </animated.p>
+      </div>
 
       {/* Timeline like object */}
-      <div className="container mx-auto h-full w-full">
+      <animated.div className="container mx-auto h-full w-full" ref={ref} style={springs}>
         <div className="wrap relative h-full overflow-hidden">
           <div className="border-2-2 absolute left-1/2 h-full border border-gray-700 border-opacity-20"></div>
           {workDescriptions.map((work, index) => {
             return <TimelineCard index={index + 1} key={index} {...work} />;
           })}
         </div>
-      </div>
+      </animated.div>
     </Section>
   );
 }

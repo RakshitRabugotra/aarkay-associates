@@ -9,33 +9,33 @@ import Section from "@components/Section";
 // Constants
 import { BUILDINGS_IMG } from "@constants";
 import { animated, useSpring, useInView } from "react-spring";
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 
 export default function Hero() {
   return (
     <Section id="hero-section">
-      <Heading>{"Aarkay Associates, Pathankot"}</Heading>
+      <Heading className="md:mt-8">{"Aarkay Associates, Pathankot"}</Heading>
 
-      <p className="text-lg font-medium text-stone-900">
+      <p className="text-lg font-medium text-stone-900 md:max-w-[60vw]">
         {
           "Crafting innovative designs, shaping inspirations for sustainable living in tomorrow's world timeless designs, shaping inspirations for Tomorrow's world"
         }
       </p>
 
       {/* Image and count */}
-      <div className="flex w-full flex-col gap-2 md:m-auto md:h-[50vh] md:flex-row">
+      <div className="flex w-full flex-col gap-2 md:my-auto md:h-[50vh] md:flex-row">
         <Image
           src={BUILDINGS_IMG[1].src}
           width={600}
           height={800}
           className={
-            "aspect-square h-full w-full rounded-2xl bg-center object-cover"
+            "aspect-square h-full w-full rounded-2xl bg-center object-cover md:w-2/5"
           }
           alt={"building image"}
         />
         <div
           className={
-            "flex flex-col gap-4 rounded-2xl bg-stone-800 p-8 text-stone-50"
+            "flex flex-col gap-4 justify-center rounded-2xl bg-stone-800 p-8 text-stone-50 md:w-1/5"
           }
         >
           <div className={"flex flex-col flex-wrap text-2xl"}>
@@ -59,7 +59,7 @@ export default function Hero() {
           width={600}
           height={800}
           className={
-            "hidden aspect-square h-full w-full rounded-2xl bg-center object-cover md:block"
+            "hidden aspect-square h-full w-2/5 rounded-2xl bg-center object-cover md:block"
           }
           alt={BUILDINGS_IMG[BUILDINGS_IMG.length - 1].alt}
         />
@@ -75,9 +75,6 @@ function CountUpInView({
   num: number;
   className?: string;
 }) {
-  // Animate when in view
-  const [ref, inView] = useInView();
-
   /* Animate the number */
   const { number } = useSpring({
     from: { number: 0 },
@@ -85,15 +82,23 @@ function CountUpInView({
     delay: 0,
     config: { mass: 1, tension: 20, friction: 7 }
   });
-
-  useEffect(() => {
-    if(inView)
-      number.start({to: {number: num}, reset: false})
-  }, [inView, num, number]);
+  
+  // Animate when in view
+  const [ref, springs] = useInView(
+    () => ({
+      from: {
+        opacity: 0.5,
+        y: 100,
+      },
+      to: {
+        opacity: 1,
+        y: 0,
+      },
+  }))
 
   return (
-    <animated.span className={className} ref={ref}>
+    <animated.span ref={ref} className={className} style={springs}>
       {number.to((_num) => _num.toFixed(0))}
     </animated.span>
-  );
+  )
 }

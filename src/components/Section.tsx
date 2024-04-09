@@ -5,7 +5,7 @@ export default function Section({
   id,
   className,
   fitHeight,
-  children,
+  children
 }: {
   id?: string;
   className?: string;

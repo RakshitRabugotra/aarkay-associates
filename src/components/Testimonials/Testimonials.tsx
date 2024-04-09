@@ -2,6 +2,7 @@
 
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
+import { animated, useInView } from "react-spring";
 
 // Internal Dependencies
 import Section from "@/components/Section";
@@ -21,20 +22,35 @@ export default function Testimonials() {
     Autoplay({ stopOnInteraction: false })
   ]);
 
-  return (
-    <Section id="testimonials" fitHeight>
-      <Heading>{"Hear from our Clients"}</Heading>
-      <p>{`Exploring the experiences and satisfaction of our partners with ${FIRM_NAME}'s exceptional services and design solutions`}</p>
+  // Animate when in view
+  const [ref, springs] = useInView(
+    () => ({
+      from: {
+        opacity: 0,
+        transform: "translateY(40%)",
+      },
+      to: {
+        opacity: 1,
+        transform: "translateY(0%)",
+      },
+  }))
 
-      {/* <Carousel> */}
-      <div ref={carouselRef} className="max-h-fit overflow-x-clip px-1">
-        <div className="flex min-h-max items-stretch gap-4 px-2">
-          {TESTIMONIALS.map((testimonial: TestimonialCard, index) => (
-            <Slide key={index} {...testimonial} />
-          ))}
+  return (
+    <animated.div ref={ref} style={springs}>
+    <Section id="testimonials" fitHeight>
+        <Heading>{"Hear from our Clients"}</Heading>
+        <p>{`Exploring the experiences and satisfaction of our partners with ${FIRM_NAME}'s exceptional services and design solutions`}</p>
+
+        {/* <Carousel> */}
+        <div ref={carouselRef} className="max-h-fit overflow-x-clip px-1">
+          <div className="flex min-h-max items-stretch gap-4 px-2">
+            {TESTIMONIALS.map((testimonial: TestimonialCard, index) => (
+              <Slide key={index} {...testimonial} />
+            ))}
+          </div>
         </div>
-      </div>
     </Section>
+    </animated.div>
   );
 }
 

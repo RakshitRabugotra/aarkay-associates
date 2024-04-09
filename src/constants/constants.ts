@@ -152,7 +152,7 @@ export const TESTIMONIALS: TestimonialCard[] = [
       "Choosing AarKay Associates for our office space was a great decision. They understood our brand and created a space that enhances productivity. Seamless process, outstanding outcome."
   },
   {
-    username: "Neha Desai",
+    username: "Manyu Rajnibala",
     rating: 4,
     statement:
       "AarKay Associates is our trusted partner in property ventures. Their expertise and commitment to quality are unmatched. Confident in their ability, eager for future collaborations."
