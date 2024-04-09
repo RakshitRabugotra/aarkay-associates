@@ -113,7 +113,7 @@ export default function Navbar() {
                 onClick={() => setShowMenu((prev) => false)}
                 key={index}
                 style={props}
-                className="text-3xl underline underline-offset-4 font-medium uppercase p-2 rounded-xl text-stone-900"
+                className="text-3xl font-semibold uppercase p-2 rounded-xl text-stone-900"
               >
                 {sections[index].name}
               </animated.a>

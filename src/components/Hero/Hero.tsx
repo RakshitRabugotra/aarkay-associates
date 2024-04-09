@@ -9,12 +9,29 @@ import Section from "@components/Section";
 // Constants
 import { BUILDINGS_IMG } from "@constants";
 import { animated, useSpring, useInView } from "react-spring";
-import { useEffect } from "react";
 
 export default function Hero() {
+
+  const [ref, springs] = useInView(() => ({
+    from: { transform: "translateY(10%)", opacity: 0, color: "rgb(239 68 68 / 1)" },
+    to: { transform: "translateX(0%)", opacity: 1, color: "rgb(28 25 23 / 1)" }
+  }), {});
+
   return (
     <Section id="hero-section">
-      <Heading className="md:mt-8">{"Aarkay Associates, Pathankot"}</Heading>
+      <Heading className="md:mt-8">
+        {"Aarkay Associates, "} <br/>
+        <animated.div className="inline-flex text-4xl text-stone-9" ref={ref} style={springs}>
+          {"Pathankot"}
+          <Image
+            src={"/assets/misc/pin.svg"}
+            width={100}
+            height={100}
+            alt={"map-pin"}
+            className={"m-auto aspect-square h-10 w-10 p-1"}
+          />
+        </animated.div>
+      </Heading>
 
       <p className="text-lg font-medium text-stone-900 md:max-w-[60vw]">
         {
@@ -35,7 +52,7 @@ export default function Hero() {
         />
         <div
           className={
-            "flex flex-col gap-4 justify-center rounded-2xl bg-stone-800 p-8 text-stone-50 md:w-1/5"
+            "flex flex-col justify-center gap-4 rounded-2xl bg-stone-800 p-8 text-stone-50 md:w-1/5"
           }
         >
           <div className={"flex flex-col flex-wrap text-2xl"}>
@@ -78,27 +95,26 @@ function CountUpInView({
   /* Animate the number */
   const { number } = useSpring({
     from: { number: 0 },
-    to: {number: num},
+    to: { number: num },
     delay: 0,
     config: { mass: 1, tension: 20, friction: 7 }
   });
-  
+
   // Animate when in view
-  const [ref, springs] = useInView(
-    () => ({
-      from: {
-        opacity: 0.5,
-        y: 100,
-      },
-      to: {
-        opacity: 1,
-        y: 0,
-      },
-  }))
+  const [ref, springs] = useInView(() => ({
+    from: {
+      opacity: 0.5,
+      y: 100
+    },
+    to: {
+      opacity: 1,
+      y: 0
+    }
+  }));
 
   return (
     <animated.span ref={ref} className={className} style={springs}>
       {number.to((_num) => _num.toFixed(0))}
     </animated.span>
-  )
+  );
 }

@@ -72,7 +72,7 @@ function Slide({ rating, statement, username }: TestimonialCard) {
       <div className="w-full text-left">{ratingArray}
       </div>
       <div>&quot;{statement}&quot;</div>
-      <div className="px-2 text-lg font-medium text-black italic font-sans">— {username}</div>
+      <div className="display px-2 text-xl font-medium text-black font-sans">— {username}</div>
     </div>
   );
 }
