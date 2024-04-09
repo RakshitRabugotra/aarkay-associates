@@ -30,7 +30,7 @@ function Carousel({ slides }: { slides: React.ReactNode[] }) {
   const [carouselRef] = useEmblaCarousel({ loop: true }, [Autoplay({ stopOnInteraction: false })]);
 
   return (
-    <div ref={carouselRef} className="h-full overflow-x-clip">
+    <div ref={carouselRef} className="h-full p-1 overflow-x-clip">
       <div className="flex h-full">{slides}</div>
     </div>
   );
@@ -44,7 +44,7 @@ function Slide({ image }: { image: ImageCard }) {
         width={600}
         height={1200}
         alt={image.alt}
-        className={"aspect-square w-full px-2 h-3/4 rounded-xl object-cover"}
+        className={"aspect-square p-2 w-full h-3/4 rounded-3xl object-cover"}
       />
       <div className={"flex flex-col px-2"}>
         <h4 className="heading text-4xl font-medium">{image.title}</h4>

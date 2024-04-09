@@ -91,7 +91,7 @@ export default function Navbar() {
       </nav>
 
       <animated.div
-        className="z-40 fixed left-0 top-0 h-screen w-full bg-stone-300 bg-opacity-30 p-2 backdrop-blur-sm "
+        className="z-40 fixed left-0 top-0 h-screen w-full bg-stone-50/90 p-2 backdrop-blur-sm "
         style={spring}
       >
         {/* Close Button */}
@@ -113,7 +113,7 @@ export default function Navbar() {
                 onClick={() => setShowMenu((prev) => false)}
                 key={index}
                 style={props}
-                className="text-3xl font-medium backdrop-blur-sm bg-opacity-60 uppercase p-2 border-white border-2 bg-stone-300 rounded-xl text-stone-900"
+                className="text-3xl underline underline-offset-4 font-medium uppercase p-2 rounded-xl text-stone-900"
               >
                 {sections[index].name}
               </animated.a>

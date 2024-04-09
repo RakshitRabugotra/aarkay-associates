@@ -88,7 +88,7 @@ function CountUpInView({
 
   useEffect(() => {
     if(inView)
-      number.start({to: {number: num}, reset: true})
+      number.start({to: {number: num}, reset: false})
   }, [inView, num, number]);
 
   return (
