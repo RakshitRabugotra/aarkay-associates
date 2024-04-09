@@ -20,7 +20,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
-      "@supabase/*": ["./src/utils/supabase/*"],
+      "@utils/*": ["./src/utils/*"],
       "@constants": ["./src/constants/constants.ts"],
     }
   },
