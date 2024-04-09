@@ -13,7 +13,7 @@ import { useEffect, useMemo } from "react";
 
 export default function Hero() {
   return (
-    <Section padded id="hero-section">
+    <Section id="hero-section">
       <Heading>{"Aarkay Associates, Pathankot"}</Heading>
 
       <p className="text-lg font-medium text-stone-900">

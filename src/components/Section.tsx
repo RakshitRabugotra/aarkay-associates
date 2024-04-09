@@ -4,21 +4,20 @@ import { twMerge } from "tailwind-merge";
 export default function Section({
   id,
   className,
+  fitHeight,
   children,
-  padded
 }: {
   id?: string;
   className?: string;
-  padded?: boolean;
+  fitHeight?: boolean;
   children: React.ReactNode;
 }) {
   return (
     <div
       id={id}
       className={twMerge(
-        "min-h-screen p-6",
-        "flex w-full flex-col gap-4",
-        padded ? "pt-20" : "",
+        fitHeight ? "min-h-fit" : "min-h-screen",
+        "flex w-full flex-col gap-4 p-6 pt-20",
         className
       )}
     >

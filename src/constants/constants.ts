@@ -123,6 +123,48 @@ export const WORK_DESCRIPTIONS: WorkDescription[] = [
   }
 ];
 
+/* Testimonials from clients */
+export const RATING_MAX = 5;
+
+export type TestimonialCard = {
+  rating: number;
+  statement: string;
+  username: string;
+};
+
+export const TESTIMONIALS: TestimonialCard[] = [
+  {
+    username: "Rajesh Gupta",
+    rating: 4,
+    statement:
+      "AarKay Associates transformed my house into a dream home. Their attention to detail and innovative design exceeded expectations. Grateful for their professionalism and dedication."
+  },
+  {
+    username: "Anjali Sharma",
+    rating: 4,
+    statement:
+      "AarKay Associates added immense value to our real estate projects. Their blend of traditional Indian architecture with modern design is remarkable. Highly recommend their innovative solutions."
+  },
+  {
+    username: "Vikram Patel",
+    rating: 5,
+    statement:
+      "Choosing AarKay Associates for our office space was a great decision. They understood our brand and created a space that enhances productivity. Seamless process, outstanding outcome."
+  },
+  {
+    username: "Neha Desai",
+    rating: 4,
+    statement:
+      "AarKay Associates is our trusted partner in property ventures. Their expertise and commitment to quality are unmatched. Confident in their ability, eager for future collaborations."
+  },
+  {
+    username: "Ritu Singh",
+    rating: 5,
+    statement:
+      "Collaborating with AarKay Associates elevates my projects. Their passion for design and attention to detail shine through. Seamless integration of architectural and interior elements. Highly recommended for innovative solutions."
+  }
+];
+
 /* Links for socials */
 export type SocialMedia = { name: string; svgSrc: string; href: string };
 
