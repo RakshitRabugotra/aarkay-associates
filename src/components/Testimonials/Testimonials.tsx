@@ -12,12 +12,18 @@ import Heading from "@/components/Heading";
 import {
   FIRM_NAME,
   RATING_MAX,
+  SECTIONS,
   TESTIMONIALS,
   TestimonialCard
 } from "@/constants/constants";
 import { twMerge } from "tailwind-merge";
 
+
+// Extract this section
+const thisSection = SECTIONS.testimonials;
+
 export default function Testimonials() {
+
   const [carouselRef] = useEmblaCarousel({ loop: true }, [
     Autoplay({ stopOnInteraction: false })
   ]);
@@ -37,8 +43,8 @@ export default function Testimonials() {
 
   return (
     <animated.div ref={ref} style={springs}>
-    <Section id="testimonials" fitHeight>
-        <Heading>{"Hear from our Clients"}</Heading>
+    <Section id={thisSection.id} fitHeight>
+        <Heading>{thisSection.name}</Heading>
         <p>{`Exploring the experiences and satisfaction of our partners with ${FIRM_NAME}'s exceptional services and design solutions`}</p>
 
         {/* <Carousel> */}
@@ -49,6 +55,8 @@ export default function Testimonials() {
             ))}
           </div>
         </div>
+        {/* See all button */}
+        <a className="text-lg px-8 py-2 ml-3 md:m-0 bg-stone-900 text-stone-100 rounded-xl max-w-fit">See all</a>
     </Section>
     </animated.div>
   );
@@ -59,7 +67,7 @@ function Slide({ rating, statement, username }: TestimonialCard) {
     // The rating stars
     const ratingArray : React.ReactNode[] = []
     for(let i = 1; i <= RATING_MAX; i++) {
-        ratingArray.push(<RatingStar on={i <= rating}/>)
+        ratingArray.push(<RatingStar on={i <= rating} key={i}/>)
     }
 
   return (

@@ -8,7 +8,10 @@ import Heading from "@components/Heading";
 import Section from "@components/Section";
 
 // Constants
-import { WORK_DESCRIPTIONS as workDescriptions } from "@constants";
+import { SECTIONS, WORK_DESCRIPTIONS as workDescriptions } from "@constants";
+
+// Extract this section
+const thisSection = SECTIONS.about
 
 export default function About() {
 
@@ -26,10 +29,10 @@ export default function About() {
   }))
 
   return (
-    <Section id="about-us" className="flex flex-col h-full md:flex-row md:items-stretch">
+    <Section id={thisSection.id} className="flex flex-col h-full md:flex-row md:items-stretch">
 
       <div className="md:grow-0 md:basis-2/3 md:pr-4">
-        <Heading>{"Why Choose Us?"}</Heading>
+        <Heading>{thisSection.name}</Heading>
         <animated.p className="md:mt-12">
           {"With a proven track record of excellence, unparalleled attention to detail, and a passion for Discover why clients choose us as their trusted partner in building dreams into reality."}
         </animated.p>

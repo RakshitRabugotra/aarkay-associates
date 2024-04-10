@@ -22,7 +22,7 @@ export default function Navbar() {
 
   // Animate Menu items
   const [trail, trailApi] = useTrail(
-    sections.length + 1, // +1 for Contact Button
+    Object.values(sections).length + 1, // +1 for Contact Button
     () => ({
       from: {
         transform: "translateY(-10%)",
@@ -34,7 +34,7 @@ export default function Navbar() {
       },
       reset: true
     })
-  )
+  );
 
   useEffect(() => {
     if (menuInView && trailApi)
@@ -57,11 +57,16 @@ export default function Navbar() {
         </div>
 
         {/* Sections of the page */}
-        <ul className="absolute bg-slate-50/10 rounded-xl left-1/2 top-1/2 hidden w-1/2 -translate-x-1/2 -translate-y-1/2 justify-around px-8 py-2 md:inline-flex">
-          {sections.map((section, index) => {
+        <ul className="absolute left-1/2 top-1/2 hidden w-1/2 -translate-x-1/2 -translate-y-1/2 justify-around rounded-xl bg-slate-50/10 px-8 py-2 md:inline-flex">
+          {Object.entries(sections).map(([section, { id }], index) => {
             return (
               <li key={index}>
-                <a href={"#" + section.id} className="text-base hover:text-stone-400 underline-offset-2 hover:underline transition-all">{section.name}</a>
+                <a
+                  href={"#" + id}
+                  className="text-base underline-offset-2 transition-all capitalize hover:text-stone-400 hover:underline"
+                >
+                  {section}
+                </a>
               </li>
             );
           })}
@@ -69,7 +74,12 @@ export default function Navbar() {
 
         {/* The book demo */}
         <div className="inline-flex items-center gap-4">
-          <a className={twMerge("rounded-lg border-2 border-solid border-stone-300 bg-stone-300 p-2 text-base font-semibold text-stone-900", "md:rounded-full md:px-4 md:text-xs")}>
+          <a
+            className={twMerge(
+              "rounded-lg border-2 border-solid border-stone-300 bg-stone-300 p-2 text-base font-semibold text-stone-900",
+              "md:rounded-full md:px-4 md:text-xs"
+            )}
+          >
             Book a Demo
           </a>
 
@@ -82,7 +92,7 @@ export default function Navbar() {
           </a>
 
           <button
-            onClick={() => setShowMenu(prev => true)}
+            onClick={() => setShowMenu((prev) => true)}
             className="rounded-lg border-2 border-solid border-stone-900 bg-stone-900 p-2 px-4 text-base font-semibold text-stone-100 md:hidden"
           >
             Menu
@@ -91,7 +101,7 @@ export default function Navbar() {
       </nav>
 
       <animated.div
-        className="z-40 fixed left-0 top-0 h-screen w-full bg-stone-50/90 p-2 backdrop-blur-sm "
+        className="fixed left-0 top-0 z-40 h-screen w-full bg-stone-50/90 p-2 backdrop-blur-sm "
         style={spring}
       >
         {/* Close Button */}
@@ -103,25 +113,25 @@ export default function Navbar() {
         </button>
 
         <animated.div
-          className="h-full flex flex-col items-center justify-center gap-8"
+          className="flex h-full flex-col items-center justify-center gap-8"
           ref={menuRef}
         >
           {trail.map((props, index) =>
             index !== trail.length - 1 ? (
               <animated.a
-                href={"#" + sections[index].id}
+                href={"#" + Object.values(sections)[index].id}
                 onClick={() => setShowMenu((prev) => false)}
                 key={index}
                 style={props}
-                className="text-3xl font-semibold uppercase p-2 rounded-xl text-stone-900"
+                className="rounded-xl p-2 text-3xl font-semibold uppercase text-stone-900"
               >
-                {sections[index].name}
+                {Object.keys(sections)[index]}
               </animated.a>
             ) : (
               <animated.a
                 key={index}
                 style={props}
-                onClick={() => setShowMenu(prev => false)}
+                onClick={() => setShowMenu((prev) => false)}
                 className="m-4 rounded-lg border-2 border-solid border-stone-900 bg-stone-900 p-2 px-4 text-xl font-semibold text-stone-100"
               >
                 Contact Us

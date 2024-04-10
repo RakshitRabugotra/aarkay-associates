@@ -10,8 +10,11 @@ import Heading from "@components/Heading";
 import Section from "@components/Section";
 
 // Content dependencies
-import { BUILDINGS_IMG, ImageCard } from "@constants";
+import { BUILDINGS_IMG, ImageCard, SECTIONS } from "@constants";
 
+
+// Extract this section
+const thisSection = SECTIONS.portfolio;
 
 export default function Portfolio() {
 
@@ -28,8 +31,8 @@ export default function Portfolio() {
   }))
 
   return (
-    <Section id="portfolio" /*className="bg-secondary-50 text-stone-50"*/>
-      <Heading>Our Work</Heading>
+    <Section id={thisSection.id}>
+      <Heading>{thisSection.name}</Heading>
       {/* Scrolling Gallery */}
       <animated.div className={"flex h-[80vh] w-full flex-col gap-8 overflow-y-auto"} ref={ref} style={springs}>
         <Carousel
@@ -38,6 +41,8 @@ export default function Portfolio() {
           ))}
         />
       </animated.div>
+      {/* See all button */}
+      <a className="text-lg px-8 py-2 ml-3 md:m-0 bg-stone-900 text-stone-100 rounded-xl max-w-fit">See all</a>
     </Section>
   );
 }
@@ -54,7 +59,7 @@ function Carousel({ slides }: { slides: React.ReactNode[] }) {
 
 function Slide({ image }: { image: ImageCard }) {
   return (
-    <div className={"flex shrink-0 grow-0 basis-full h-full w-full flex-col gap-2 md:basis-1/3"}>
+    <div className={"flex shrink-0 basis-full h-full w-full flex-col gap-2 md:basis-1/3"}>
       <Image
         src={image.src}
         width={600}
@@ -62,12 +67,12 @@ function Slide({ image }: { image: ImageCard }) {
         alt={image.alt}
         className={"aspect-square p-2 w-full h-3/4 rounded-3xl object-cover"}
       />
-      <div className={"flex flex-col px-2"}>
-        <h4 className="heading text-4xl font-medium">{image.title}</h4>
-        <h2 className="heading text-xl font-normal text-stone-500">
-          {image.location}
-        </h2>
-        <p className="opacity-80">{image.description}</p>
+      <div className={"flex flex-col justify-between grow px-2"}>
+        <div>
+          <h4 className="heading text-4xl font-medium">{image.title}</h4>
+          <h2 className="heading text-xl font-normal text-stone-500">{image.location}</h2>
+        </div>
+        <p className="opacity-80 my-auto text-left">{image.description}</p>
       </div>
     </div>
   );

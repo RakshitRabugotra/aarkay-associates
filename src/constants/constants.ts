@@ -14,14 +14,14 @@ export const DESCRIPTION =
 export const SELF_DOMAIN = "https://github.com/RakshitRabugotra";
 
 /* Section name of the page */
-export type Section = { name: string; id: string };
+export type ISection = { name: string; id: string };
 
-export const SECTIONS: Section[] = [
-  { name: "About Us", id: "about-us" },
-  { name: "Services", id: "services" },
-  { name: "Portfolio", id: "portfolio" },
-  { name: "Testimonials", id: "testimonials" }
-];
+export const SECTIONS = {
+  "about": { name: "Why Choose Us?", id: "about-us" },
+  "services": { name: "Services", id: "services" },
+  "portfolio": { name: "Our Work", id: "portfolio" },
+  "testimonials": { name: "Hear from our Clients", id: "testimonials" }
+};
 
 /* Images for the website */
 export type ImageCard = {
@@ -121,6 +121,43 @@ export const WORK_DESCRIPTIONS: WorkDescription[] = [
     description:
       "We believe in a collaborative process, working closely with our clients"
   }
+];
+
+
+/* Services provided by the firm */
+export type Service = {name: string; imgSrc: string; description: string};
+
+export const SERVICES: Service[] = [
+  {
+    name: "Master Planning",
+    imgSrc: "master-planning.jpg",
+    description: "Strategic visioning, land use planning, and infrastructure design for sustainable, vibrant communities."
+  },
+  {
+    name: "Architectural Design",
+    imgSrc: "architectural-design.jpg",
+    description: "We specialize in innovative designs for residential, commercial, and institutional projects, ensuring they reflect clients' visions while meeting functional needs."
+  },
+  {
+    name: "Interior Design",
+    imgSrc: "interior-designing.jpg",
+    description: "Tailored interiors enhancing ambiance, blending function and aesthetics, aligning with client preferences."
+  },
+  {
+    name: "Renovation and Restoration",
+    imgSrc: "renovation.jpg",
+    description: "Refreshing existing structures, restoring historic charm, enhancing functionality, and value."
+  },
+  {
+    name: "Project Management",
+    imgSrc: "project-management.jpg",
+    description: "Professional oversight ensuring timely, budget-friendly, high-quality project execution."
+  },
+  {
+    name: "Consulting Services",
+    imgSrc: "consulting.jpg",
+    description: "Expert advice on zoning regulations, building codes, and project feasibility, optimizing outcomes."
+  },
 ];
 
 /* Testimonials from clients */

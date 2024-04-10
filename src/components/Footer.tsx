@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="z-20 flex flex-col justify-between space-y-10 pb-4 pt-12">
       <nav className="flex flex-wrap justify-center gap-6 font-medium text-gray-500">
-        {sections.map((section, index) => {
+        {Object.values(sections).map((section, index) => {
           return (
             <a
               className="hover:text-slate-400"

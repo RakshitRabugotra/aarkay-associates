@@ -8,7 +8,7 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'aesthetic': "url('/assets/buildings/image9.jpg')"
+        'aesthetic': "url('/assets/misc/wallpaper.jpg')"
       },
       fontFamily: {
         sans: ["Inter", "Helvetica Neue", "sans-serif"],
