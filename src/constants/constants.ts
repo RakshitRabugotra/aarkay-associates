@@ -14,7 +14,7 @@ export const DESCRIPTION =
 export const SELF_DOMAIN = "https://github.com/RakshitRabugotra";
 
 /* Section name of the page */
-export type ISection = { name: string; id: string };
+export interface ISection { name: string; id: string };
 
 export const SECTIONS = {
   "about": { name: "Why Choose Us?", id: "about-us" },

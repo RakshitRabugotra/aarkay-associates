@@ -9,14 +9,14 @@ export default function Footer() {
   return (
     <footer className="z-20 flex flex-col justify-between space-y-10 pb-4 pt-12">
       <nav className="flex flex-wrap justify-center gap-6 font-medium text-gray-500">
-        {Object.values(sections).map((section, index) => {
+        {Object.entries(sections).map(([section, { id }], index) => {
           return (
             <a
-              className="hover:text-slate-400"
+              className="hover:text-slate-400 capitalize"
               key={index}
-              href={"#" + section.id}
+              href={"#" + id}
             >
-              {section.name}
+              {section}
             </a>
           );
         })}
