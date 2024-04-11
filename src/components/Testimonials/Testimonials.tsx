@@ -52,10 +52,6 @@ export default function Testimonials() {
             ))}
           </div>
         </div>
-        {/* See all button */}
-        <a className="ml-3 max-w-fit rounded-xl bg-stone-900 px-8 py-2 text-lg text-stone-100 md:m-0">
-          See all
-        </a>
       </Section>
     </animated.div>
   );

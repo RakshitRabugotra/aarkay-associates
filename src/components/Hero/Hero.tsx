@@ -19,9 +19,9 @@ export default function Hero() {
 
   return (
     <Section id="hero-section">
-      <Heading className="md:mt-8">
+      <Heading className="flex-col md:mt-8">
         {"Aarkay Associates, "} <br/>
-        <animated.div className="inline-flex text-4xl text-stone-9" ref={ref} style={springs}>
+        <animated.div className="inline-flex text-4xl text-stone-9 max-w-fit" ref={ref} style={springs}>
           {"Pathankot"}
           <Image
             src={"/assets/misc/pin.svg"}
@@ -48,6 +48,7 @@ export default function Hero() {
           className={
             "aspect-square h-full w-full rounded-2xl bg-center object-cover md:w-2/5"
           }
+          priority
           alt={"building image"}
         />
         <div
@@ -79,6 +80,7 @@ export default function Hero() {
             "hidden aspect-square h-full w-2/5 rounded-2xl bg-center object-cover md:block"
           }
           alt={BUILDINGS_IMG[BUILDINGS_IMG.length - 1].alt}
+          priority
         />
       </div>
     </Section>

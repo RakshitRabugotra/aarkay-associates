@@ -26,7 +26,6 @@ export const SECTIONS = {
 /* Images for the website */
 export type ImageCard = {
   src: string;
-  title: string;
   location: string;
   description: string;
   alt: string;
@@ -35,7 +34,6 @@ export type ImageCard = {
 export const BUILDINGS_IMG: ImageCard[] = [
   {
     src: "/assets/buildings/image1.jpg",
-    title: "Pine Tree",
     location: "New York, USA",
     description:
       "Inspired from the shape of a pineapple, this marvel took 10 years to build",
@@ -43,7 +41,6 @@ export const BUILDINGS_IMG: ImageCard[] = [
   },
   {
     src: "/assets/buildings/image2.jpg",
-    title: "Ambient",
     location: "New Delhi, India",
     description:
       "This building blends in with the old as well as the young, simple design makes it appealing for office use",
@@ -51,7 +48,6 @@ export const BUILDINGS_IMG: ImageCard[] = [
   },
   {
     src: "/assets/buildings/image3.jpg",
-    title: "The Green Cafe",
     location: "Chandigarh, India",
     description:
       "This cafe is made to live and breath with the nature, providing a perfect ambient setting to chill and relax",
@@ -59,7 +55,6 @@ export const BUILDINGS_IMG: ImageCard[] = [
   },
   {
     src: "/assets/buildings/image4.jpg",
-    title: "La Aqua",
     location: "Shimla, India",
     description:
       "This hotel live within the deep valleys of Himachal Pradesh, perfect spot for tourism",
@@ -67,7 +62,6 @@ export const BUILDINGS_IMG: ImageCard[] = [
   },
   {
     src: "/assets/buildings/image5.jpg",
-    title: "Ageless",
     location: "Ambala, India",
     description:
       "This home is crafted to fit in any location and generation, hence the name Ageless",
@@ -75,14 +69,12 @@ export const BUILDINGS_IMG: ImageCard[] = [
   },
   {
     src: "/assets/buildings/image6.jpg",
-    title: "Sleek",
     location: "Chandigarh, India",
     description: "The sleek designs says it all",
     alt: "sleek home"
   },
   {
     src: "/assets/buildings/image7.jpg",
-    title: "International Education Plan",
     location: "Mumbai, India",
     description:
       "Building to accommodate Architectural students where they learn and have joyful moments of youth",
@@ -90,7 +82,6 @@ export const BUILDINGS_IMG: ImageCard[] = [
   },
   {
     src: "/assets/buildings/image8.jpg",
-    title: "Ambiguous",
     location: "Jammu, India",
     description:
       "This house is named ambiguous because its beauty lies in the eyes of the beholder",
