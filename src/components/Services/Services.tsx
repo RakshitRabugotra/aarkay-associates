@@ -15,7 +15,7 @@ export default function Services() {
   const thisSection = sections.services;
 
   return (
-    <Section id={thisSection.id}>
+    <Section id={thisSection.id} className="overflow-x-clip">
       <Heading>{thisSection.name}</Heading>
 
       {/* Service cards */}
