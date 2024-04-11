@@ -125,13 +125,13 @@ export const WORK_DESCRIPTIONS: WorkDescription[] = [
 
 
 /* Services provided by the firm */
-export type Service = {name: string; imgSrc: string; description: string};
+export interface IService {name: string; imgSrc: string; description: string };
 
-export const SERVICES: Service[] = [
+export const SERVICES: IService[] = [
   {
-    name: "Master Planning",
-    imgSrc: "master-planning.jpg",
-    description: "Strategic visioning, land use planning, and infrastructure design for sustainable, vibrant communities."
+    name: "Interior Design",
+    imgSrc: "interior-designing.jpg",
+    description: "Tailored interiors enhancing ambiance, blending function and aesthetics, aligning with client preferences."
   },
   {
     name: "Architectural Design",
@@ -139,9 +139,9 @@ export const SERVICES: Service[] = [
     description: "We specialize in innovative designs for residential, commercial, and institutional projects, ensuring they reflect clients' visions while meeting functional needs."
   },
   {
-    name: "Interior Design",
-    imgSrc: "interior-designing.jpg",
-    description: "Tailored interiors enhancing ambiance, blending function and aesthetics, aligning with client preferences."
+    name: "Master Planning",
+    imgSrc: "master-planning.jpg",
+    description: "Strategic visioning, land use planning, and infrastructure design for sustainable, vibrant communities."
   },
   {
     name: "Renovation and Restoration",

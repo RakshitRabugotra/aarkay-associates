@@ -18,32 +18,29 @@ import {
 } from "@/constants/constants";
 import { twMerge } from "tailwind-merge";
 
-
 // Extract this section
 const thisSection = SECTIONS.testimonials;
 
 export default function Testimonials() {
-
   const [carouselRef] = useEmblaCarousel({ loop: true }, [
     Autoplay({ stopOnInteraction: false })
   ]);
 
   // Animate when in view
-  const [ref, springs] = useInView(
-    () => ({
-      from: {
-        opacity: 0,
-        transform: "translateY(40%)",
-      },
-      to: {
-        opacity: 1,
-        transform: "translateY(0%)",
-      },
-  }))
+  const [ref, springs] = useInView(() => ({
+    from: {
+      opacity: 0,
+      transform: "translateY(40%)"
+    },
+    to: {
+      opacity: 1,
+      transform: "translateY(0%)"
+    }
+  }));
 
   return (
     <animated.div ref={ref} style={springs}>
-    <Section id={thisSection.id} fitHeight>
+      <Section id={thisSection.id} fitHeight>
         <Heading>{thisSection.name}</Heading>
         <p>{`Exploring the experiences and satisfaction of our partners with ${FIRM_NAME}'s exceptional services and design solutions`}</p>
 
@@ -56,19 +53,20 @@ export default function Testimonials() {
           </div>
         </div>
         {/* See all button */}
-        <a className="text-lg px-8 py-2 ml-3 md:m-0 bg-stone-900 text-stone-100 rounded-xl max-w-fit">See all</a>
-    </Section>
+        <a className="ml-3 max-w-fit rounded-xl bg-stone-900 px-8 py-2 text-lg text-stone-100 md:m-0">
+          See all
+        </a>
+      </Section>
     </animated.div>
   );
 }
 
 function Slide({ rating, statement, username }: TestimonialCard) {
-
-    // The rating stars
-    const ratingArray : React.ReactNode[] = []
-    for(let i = 1; i <= RATING_MAX; i++) {
-        ratingArray.push(<RatingStar on={i <= rating} key={i}/>)
-    }
+  // The rating stars
+  const ratingArray: React.ReactNode[] = [];
+  for (let i = 1; i <= RATING_MAX; i++) {
+    ratingArray.push(<RatingStar on={i <= rating} key={i} />);
+  }
 
   return (
     <div
@@ -77,10 +75,11 @@ function Slide({ rating, statement, username }: TestimonialCard) {
         "rounded-xl border-2 px-4 py-2 text-stone-900"
       )}
     >
-      <div className="w-full text-left">{ratingArray}
-      </div>
+      <div className="w-full text-left">{ratingArray}</div>
       <div>&quot;{statement}&quot;</div>
-      <div className="display px-2 text-xl font-medium text-black font-sans">— {username}</div>
+      <div className="display px-2 font-sans text-xl font-medium text-black">
+        — {username}
+      </div>
     </div>
   );
 }
@@ -89,7 +88,7 @@ function RatingStar({ on }: { on: boolean }) {
   return (
     <svg
       className={twMerge(
-        "ms-1 h-5 w-5 inline-block",
+        "ms-1 inline-block h-5 w-5",
         on ? "text-yellow-300" : "text-gray-300"
       )}
       aria-hidden="true"
