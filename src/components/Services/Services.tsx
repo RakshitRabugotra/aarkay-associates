@@ -45,8 +45,7 @@ function Service({ name, imgSrc, description, index }: IServiceCard) {
     to: {
       opacity: 1,
       transform: "translateX(0%)"
-    },
-    config: {mass: 1, tension: 20, friction: 1}
+    }
   }));
 
   return (
