@@ -62,8 +62,8 @@ export default function Portfolio() {
 }
 
 function Carousel({ slides }: { slides: React.ReactNode[] }) {
-  const [carouselRef] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ stopOnInteraction: false })
+  const [carouselRef] = useEmblaCarousel({ loop: true, duration: 35 }, [
+    Autoplay({ delay: 3000, stopOnInteraction: false })
   ]);
 
   return (

@@ -22,8 +22,8 @@ import { twMerge } from "tailwind-merge";
 const thisSection = SECTIONS.testimonials;
 
 export default function Testimonials() {
-  const [carouselRef] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ stopOnInteraction: false })
+  const [carouselRef] = useEmblaCarousel({ loop: true, duration: 30 }, [
+    Autoplay({ stopOnInteraction: false, delay: 2500 })
   ]);
 
   // Animate when in view
