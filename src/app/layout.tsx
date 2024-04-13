@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./font.css";
-import "normalize.css";
 import "./globals.css";
 
 // Internal Dependencies
