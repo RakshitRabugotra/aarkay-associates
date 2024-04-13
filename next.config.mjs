@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+const nextConfig = {
     optimizeFonts: false
 };
+
+export default nextConfig;
