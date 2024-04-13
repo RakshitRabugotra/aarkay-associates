@@ -14,13 +14,16 @@ export const DESCRIPTION =
 export const SELF_DOMAIN = "https://github.com/RakshitRabugotra";
 
 /* Section name of the page */
-export interface ISection { name: string; id: string };
+export interface ISection {
+  name: string;
+  id: string;
+}
 
 export const SECTIONS = {
-  "about": { name: "Why Choose Us?", id: "about-us" },
-  "services": { name: "Services", id: "services" },
-  "portfolio": { name: "Our Work", id: "portfolio" },
-  "testimonials": { name: "Hear from our Clients", id: "testimonials" }
+  about: { name: "Why Choose Us?", id: "about-us" },
+  services: { name: "Services", id: "services" },
+  portfolio: { name: "Our Work", id: "portfolio" },
+  testimonials: { name: "Hear from our Clients", id: "testimonials" }
 };
 
 /* Images for the website */
@@ -114,41 +117,50 @@ export const WORK_DESCRIPTIONS: WorkDescription[] = [
   }
 ];
 
-
 /* Services provided by the firm */
-export interface IService {name: string; imgSrc: string; description: string };
+export interface IService {
+  name: string;
+  imgSrc: string;
+  description: string;
+}
 
 export const SERVICES: IService[] = [
   {
     name: "Interior Design",
     imgSrc: "interior-designing.jpg",
-    description: "Tailored interiors enhancing ambiance, blending function and aesthetics, aligning with client preferences."
+    description:
+      "Tailored interiors enhancing ambiance, blending function and aesthetics, aligning with client preferences."
   },
   {
     name: "Architectural Design",
     imgSrc: "architectural-design.jpg",
-    description: "We specialize in innovative designs for residential, commercial, and institutional projects, ensuring they reflect clients' visions while meeting functional needs."
+    description:
+      "We specialize in innovative designs for residential, commercial, and institutional projects, ensuring they reflect clients' visions while meeting functional needs."
   },
   {
     name: "Master Planning",
     imgSrc: "master-planning.jpg",
-    description: "Strategic visioning, land use planning, and infrastructure design for sustainable, vibrant communities."
+    description:
+      "Strategic visioning, land use planning, and infrastructure design for sustainable, vibrant communities."
   },
   {
     name: "Renovation and Restoration",
     imgSrc: "renovation.jpg",
-    description: "Refreshing existing structures, restoring historic charm, enhancing functionality, and value."
+    description:
+      "Refreshing existing structures, restoring historic charm, enhancing functionality, and value."
   },
   {
     name: "Project Management",
     imgSrc: "project-management.jpg",
-    description: "Professional oversight ensuring timely, budget-friendly, high-quality project execution."
+    description:
+      "Professional oversight ensuring timely, budget-friendly, high-quality project execution."
   },
   {
     name: "Consulting Services",
     imgSrc: "consulting.jpg",
-    description: "Expert advice on zoning regulations, building codes, and project feasibility, optimizing outcomes."
-  },
+    description:
+      "Expert advice on zoning regulations, building codes, and project feasibility, optimizing outcomes."
+  }
 ];
 
 /* Testimonials from clients */
@@ -218,3 +230,14 @@ export const SOCIALS: SocialMedia[] = [
     href: "tel:+919569764949"
   }
 ];
+
+/* Error page handing */
+export type ErrorType = { code: number; text: string; imgSrc: string };
+
+export const ERROR = {
+  e404: {
+    code: 404,
+    text: "You've landed somewhere you should not have. Even google does not know this page exists.",
+    imgSrc: ""
+  }
+};

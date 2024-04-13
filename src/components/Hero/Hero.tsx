@@ -57,14 +57,14 @@ export default function Hero() {
           }
         >
           <div className={"flex flex-col flex-wrap text-2xl"}>
-            <span className="font-display text-6xl text-stone-400">
+            <span className="text-6xl text-stone-400">
               {"+"}
               <CountUpInView num={350} />
             </span>
             Successful projects
           </div>
           <div className={"flex flex-col flex-wrap text-2xl"}>
-            <span className="font-display text-6xl text-stone-400">
+            <span className="text-6xl text-stone-400">
               {"+"}
               <CountUpInView num={80} />
             </span>

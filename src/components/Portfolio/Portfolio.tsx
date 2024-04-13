@@ -11,13 +11,17 @@ import Section from "@components/Section";
 
 // Content dependencies
 import { BUILDINGS_IMG, ImageCard, SECTIONS } from "@constants";
-import { MouseEventHandler } from "react";
-import { twMerge } from "tailwind-merge";
+import { useRouter } from "next/navigation";
+
 
 // Extract this section
 const thisSection = SECTIONS.portfolio;
 
 export default function Portfolio() {
+
+  // For navigating to different page
+  const router = useRouter();
+
   const [ref, springs] = useInView(() => ({
     from: {
       opacity: 0,
@@ -34,7 +38,12 @@ export default function Portfolio() {
       <Heading className="relative">
         {thisSection.name}
         {/* See all button */}
-        <button className="absolute right-0 top-0 w-10 aspect-square text-base bg-stone-500/60 text-white/90 min-w-fit px-2" onClick={(e) => {console.log("clicked: ", e)}}>See All</button>
+        <button
+          className="absolute bottom-1/2 right-0 my-auto w-10 min-w-fit translate-y-1/2 rounded-lg bg-gray-500/15 px-4 py-2 text-base text-slate-900/90"
+          onClick={() => { return router.push("/portfolio") }}
+        >
+          See All
+        </button>
       </Heading>
       {/* Scrolling Gallery */}
       <animated.div

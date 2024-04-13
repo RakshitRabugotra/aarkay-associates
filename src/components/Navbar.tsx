@@ -46,7 +46,7 @@ export default function Navbar() {
       <nav className="fixed z-30 inline-flex w-full items-center justify-between p-4 text-sm backdrop-blur-md">
         {/* The logo and name */}
         <div>
-          <a href="#">
+          <a href="/">
             <Image
               width={30}
               height={30}
@@ -62,7 +62,7 @@ export default function Navbar() {
             return (
               <li key={index}>
                 <a
-                  href={"#" + id}
+                  href={"/#" + id}
                   className="text-base underline-offset-2 transition-all capitalize hover:text-stone-400 hover:underline"
                 >
                   {section}
