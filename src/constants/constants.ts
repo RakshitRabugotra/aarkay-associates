@@ -1,22 +1,25 @@
 /* The title of the application */
-export const TITLE = "Aarkay Associates — Build Dreams";
-export const FIRM_NAME = "Aarkay Associates";
+export const TITLE = "Aarkay Associates — Build Dreams"
+export const FIRM_NAME = "Aarkay Associates"
+export const FIRM_LOCATION = "Pathankot"
+export const FIRM_INTRO =
+  "Crafting innovative designs, shaping inspirations for sustainable living in tomorrow's world timeless designs, shaping inspirations for Tomorrow's world"
 
 /* Logo of the page */
-export const LOGO_LIGHT = "/logo-white.svg";
-export const LOGO_DARK = "/logo-black.svg";
+export const LOGO_LIGHT = "/logo-white.svg"
+export const LOGO_DARK = "/logo-black.svg"
 
 /* Description of the website */
 export const DESCRIPTION =
-  "Discover AarKay Associates, your premier destination for architectural excellence. From concept to completion, we blend creativity with functionality to craft spaces that inspire and transform. With a team dedicated to innovation and client collaboration, we're here to turn your dreams into reality. Explore our portfolio and experience the difference with AarKay Associates.";
+  "Discover AarKay Associates, your premier destination for architectural excellence. From concept to completion, we blend creativity with functionality to craft spaces that inspire and transform. With a team dedicated to innovation and client collaboration, we're here to turn your dreams into reality. Explore our portfolio and experience the difference with AarKay Associates."
 
 /* The domain for this website */
-export const SELF_DOMAIN = "https://github.com/RakshitRabugotra";
+export const SELF_DOMAIN = "https://github.com/RakshitRabugotra"
 
 /* Section name of the page */
 export interface ISection {
-  name: string;
-  id: string;
+  name: string
+  id: string
 }
 
 export const SECTIONS = {
@@ -24,15 +27,15 @@ export const SECTIONS = {
   services: { name: "Services", id: "services" },
   portfolio: { name: "Our Work", id: "portfolio" },
   testimonials: { name: "Hear from our Clients", id: "testimonials" }
-};
+}
 
 /* Images for the website */
 export type ImageCard = {
-  src: string;
-  location: string;
-  description: string;
-  alt: string;
-};
+  src: string
+  location: string
+  description: string
+  alt: string
+}
 
 export const BUILDINGS_IMG: ImageCard[] = [
   {
@@ -90,10 +93,10 @@ export const BUILDINGS_IMG: ImageCard[] = [
       "This house is named ambiguous because its beauty lies in the eyes of the beholder",
     alt: "ambiguous"
   }
-];
+]
 
 /* Why Us? */
-export type WorkDescription = { title: string; description: string };
+export type WorkDescription = { title: string; description: string }
 
 export const WORK_DESCRIPTIONS: WorkDescription[] = [
   {
@@ -115,13 +118,13 @@ export const WORK_DESCRIPTIONS: WorkDescription[] = [
     description:
       "We believe in a collaborative process, working closely with our clients"
   }
-];
+]
 
 /* Services provided by the firm */
 export interface IService {
-  name: string;
-  imgSrc: string;
-  description: string;
+  name: string
+  imgSrc: string
+  description: string
 }
 
 export const SERVICES: IService[] = [
@@ -161,16 +164,16 @@ export const SERVICES: IService[] = [
     description:
       "Expert advice on zoning regulations, building codes, and project feasibility, optimizing outcomes."
   }
-];
+]
 
 /* Testimonials from clients */
-export const RATING_MAX = 5;
+export const RATING_MAX = 5
 
 export type TestimonialCard = {
-  rating: number;
-  statement: string;
-  username: string;
-};
+  rating: number
+  statement: string
+  username: string
+}
 
 export const TESTIMONIALS: TestimonialCard[] = [
   {
@@ -203,10 +206,10 @@ export const TESTIMONIALS: TestimonialCard[] = [
     statement:
       "Collaborating with AarKay Associates elevates my projects. Their passion for design and attention to detail shine through. Seamless integration of architectural and interior elements. Highly recommended for innovative solutions."
   }
-];
+]
 
 /* Links for socials */
-export type SocialMedia = { name: string; svgSrc: string; href: string };
+export type SocialMedia = { name: string; svgSrc: string; href: string }
 
 export const SOCIALS: SocialMedia[] = [
   {
@@ -229,10 +232,10 @@ export const SOCIALS: SocialMedia[] = [
     svgSrc: "/assets/socials/phone.svg",
     href: "tel:+919569764949"
   }
-];
+]
 
 /* Error page handing */
-export type ErrorType = { code: number; text: string; imgSrc: string };
+export type ErrorType = { code: number; text: string; imgSrc: string }
 
 export const ERROR = {
   e404: {
@@ -240,4 +243,4 @@ export const ERROR = {
     text: "You've landed somewhere you should not have. Even google does not know this page exists.",
     imgSrc: ""
   }
-};
+}
