@@ -51,7 +51,7 @@ export default function Hero() {
           </animated.div>
         </Heading>
 
-        <p className="text-lg font-medium text-stone-900 md:max-w-[60vw] md:px-4 md:py-12">
+        <p className="para text-lg text-stone-900 md:max-w-[60vw] md:px-4 md:py-12">
           {FIRM_INTRO}
         </p>
       </div>

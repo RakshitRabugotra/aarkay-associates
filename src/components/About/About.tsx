@@ -1,54 +1,60 @@
 "use client"
 
-import { twMerge } from "tailwind-merge";
-import { animated, useInView } from "react-spring";
+import { twMerge } from "tailwind-merge"
+import { animated, useInView } from "react-spring"
 
 // Internal Dependencies
-import Heading from "@components/Heading";
-import Section from "@components/Section";
+import Heading from "@components/Heading"
+import Section from "@components/Section"
 
 // Constants
-import { SECTIONS, WORK_DESCRIPTIONS as workDescriptions } from "@constants";
+import { SECTIONS, WORK_DESCRIPTIONS as workDescriptions } from "@constants"
 
 // Extract this section
 const thisSection = SECTIONS.about
 
 export default function About() {
-
   // Animate when in view
-  const [ref, springs] = useInView(
-    () => ({
-      from: {
-        opacity: 0.5,
-        transform: "translateY(20%)",
-      },
-      to: {
-        opacity: 1,
-        transform: "translateY(0%)",
-      },
+  const [ref, springs] = useInView(() => ({
+    from: {
+      opacity: 0.5,
+      transform: "translateY(20%)"
+    },
+    to: {
+      opacity: 1,
+      transform: "translateY(0%)"
+    }
   }))
 
   return (
-    <Section id={thisSection.id} className="flex flex-col h-full md:flex-row md:items-stretch">
-
-      <div className="md:grow-0 md:basis-2/3 md:pr-4">
+    <Section
+      id={thisSection.id}
+      className="flex h-full flex-col md:flex-row-reverse md:items-stretch"
+    >
+      <div className="md:grow-0 md:basis-2/3 md:p-24">
         <Heading>{thisSection.name}</Heading>
-        <animated.p className="md:mt-12">
-          {"With a proven track record of excellence, unparalleled attention to detail, and a passion for Discover why clients choose us as their trusted partner in building dreams into reality."}
+        <animated.p className="para md:mt-12">
+          {
+            "With a proven track record of excellence, unparalleled attention to detail, and a passion for Discover why clients choose us as their trusted partner in building dreams into reality."
+          }
         </animated.p>
       </div>
 
       {/* Timeline like object */}
-      <animated.div className="container mx-auto h-full w-full" ref={ref} style={springs}>
+      <animated.div
+        className="container mx-auto h-full w-full py-6 md:px-6 md:py-12"
+        ref={ref}
+        style={springs}
+      >
         <div className="wrap relative h-full overflow-hidden">
           <div className="border-2-2 absolute left-1/2 h-full border border-gray-700 border-opacity-20"></div>
           {workDescriptions.map((work, index) => {
-            return <TimelineCard index={index + 1} key={index} {...work} />;
+            return <TimelineCard index={index + 1} key={index} {...work} />
           })}
         </div>
       </animated.div>
     </Section>
-  );
+  )
 }
 
 // Time card, adjust it's position as left or right based on the index
@@ -57,9 +63,9 @@ function TimelineCard({
   title,
   description
 }: {
-  index: number;
-  title: string;
-  description: string;
+  index: number
+  title: string
+  description: string
 }) {
   return (
     <div
@@ -84,5 +90,5 @@ function TimelineCard({
         </p>
       </div>
     </div>
-  );
+  )
 }
