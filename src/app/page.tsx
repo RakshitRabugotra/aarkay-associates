@@ -5,16 +5,20 @@ import Portfolio from '@components/Portfolio/Portfolio'
 import ContactUs from '@components/ContactUs/ContactUs'
 import Testimonials from '@components/Testimonials/Testimonials'
 import Services from '@components/Services/Services'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
     <>
+      <Navbar />
       <Hero />
       <About />
       <Services />
       <Portfolio />
       <ContactUs />
       <Testimonials />
+      <Footer />
     </>
   )
 }

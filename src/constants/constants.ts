@@ -9,9 +9,19 @@ export const FIRM_INTRO =
 export const LOGO_LIGHT = '/logo-white.svg'
 export const LOGO_DARK = '/logo-black.svg'
 
+export const DEMO_AVAILABLE = false
+
 /* Description of the website */
 export const DESCRIPTION =
   "Discover AarKay Associates, your premier destination for architectural excellence. From concept to completion, we blend creativity with functionality to craft spaces that inspire and transform. With a team dedicated to innovation and client collaboration, we're here to turn your dreams into reality. Explore our portfolio and experience the difference with AarKay Associates."
+
+/* Contact Us page content */
+export const CONTACT_US =
+  "Have a vision that needs a blueprint?  We turn dreams into designed realities. Our team of passionate architects is just a click, call, or carrier pigeon away - ready to collaborate and bring your project to life. Let's chat!"
+
+/* Portfolio page content */
+export const PORTFOLIO =
+  "Step into a world where innovation meets inspiration. Explore our portfolio, a curated collection of architectural marvels that push boundaries and redefine spaces. We don't just design buildings, we craft experiences. Dive in and discover what your vision can become."
 
 /* The domain for this website */
 export const SELF_DOMAIN = 'https://github.com/RakshitRabugotra'
@@ -231,6 +241,18 @@ export const SOCIALS: SocialMedia[] = [
     name: 'Phone',
     svgSrc: '/assets/socials/phone.svg',
     href: 'tel:+919569764949',
+  },
+]
+
+/* Illustrations for pages */
+export type IllustrationType = {
+  src: string
+  alt: string
+}
+export const ILLUSTRATIONS = [
+  {
+    src: '/assets/illustration/illustration-architect.jpg',
+    alt: 'architect illustration',
   },
 ]
 

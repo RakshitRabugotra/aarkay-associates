@@ -2,10 +2,6 @@ import type { Metadata } from 'next'
 import './font.css'
 import './globals.css'
 
-// Internal Dependencies
-import Footer from '@/components/Footer'
-import Navbar from '@/components/Navbar'
-
 // Constants
 import {
   TITLE as title,
@@ -24,11 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className='min-h-screen bg-stone-50'>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <body className='min-h-screen bg-stone-50'>{children}</body>
     </html>
   )
 }

@@ -15,7 +15,7 @@ export default function Error({ error }: { error: ErrorType }) {
         <p>{error.text}</p>
         <Link
           href='/'
-          className=' max-w-fit rounded-xl bg-gray-600/30 px-4 py-2 text-black'
+          className='max-w-fit cursor-pointer rounded-xl bg-gray-600/30 px-4 py-2 text-black'
         >
           {'<- Go back to Home'}
         </Link>

@@ -1,12 +1,14 @@
 'use client'
 
-import { FIRM_NAME, LOGO_DARK, SECTIONS as sections } from '@constants'
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { animated, useInView, useSpring, useTrail } from 'react-spring'
 import { twMerge } from 'tailwind-merge'
 
-export default function Navbar() {
+// Content Dependencies
+import { SECTIONS as sections, DEMO_AVAILABLE } from '@constants'
+import Logo from './Logo'
+
+export default function Navbar({ hideLinks }: { hideLinks?: boolean }) {
   // Animate in and out
   const [showMenu, setShowMenu] = useState<boolean>(false)
   const [menuRef, menuInView] = useInView()
@@ -45,47 +47,40 @@ export default function Navbar() {
     <>
       <nav className='fixed z-30 inline-flex w-full items-center justify-between p-4 text-sm backdrop-blur-md'>
         {/* The logo and name */}
-        <div>
-          <a href='/'>
-            <Image
-              width={30}
-              height={30}
-              src={LOGO_DARK}
-              alt={`${FIRM_NAME} logo`}
-            />
-          </a>
-        </div>
+        <Logo />
 
         {/* Sections of the page */}
-        <ul className='absolute left-1/2 top-1/2 hidden w-1/2 -translate-x-1/2 -translate-y-1/2 justify-around rounded-xl bg-slate-50/10 px-8 py-2 md:inline-flex'>
-          {Object.entries(sections).map(([section, { id }], index) => {
-            return (
-              <li key={index}>
-                <a
-                  href={'/#' + id}
-                  className='text-base capitalize underline-offset-2 transition-all hover:text-stone-400 hover:underline'
-                >
-                  {section}
-                </a>
-              </li>
-            )
-          })}
-        </ul>
+        {!hideLinks && (
+          <ul className='absolute left-1/2 top-1/2 hidden w-1/2 -translate-x-1/2 -translate-y-1/2 justify-around rounded-xl bg-slate-50/10 px-8 py-2 md:inline-flex'>
+            {Object.entries(sections).map(([section, { id }], index) => {
+              return (
+                <li key={index}>
+                  <a
+                    href={'/#' + id}
+                    className='text-base capitalize underline-offset-2 transition-all hover:text-stone-400 hover:underline'
+                  >
+                    {section}
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
+        )}
 
         {/* The book demo */}
         <div className='inline-flex items-center gap-4'>
-          <a
+          {DEMO_AVAILABLE && <a
             className={twMerge(
               'rounded-lg border-2 border-solid border-stone-300 bg-stone-300 p-2 text-base font-semibold text-stone-900',
               'md:rounded-full md:px-4 md:text-xs',
             )}
           >
             Book a Demo
-          </a>
+          </a>}
 
           {/* Contact Us if the screen is large enough, else hamburger */}
           <a
-            href={'tel:+919569764949'}
+            href={'/contact'}
             className='hidden rounded-full bg-stone-900 p-2 px-4 text-xs text-stone-50 md:block'
           >
             Contact Us
@@ -93,7 +88,10 @@ export default function Navbar() {
 
           <button
             onClick={() => setShowMenu((prev) => true)}
-            className='rounded-lg border-2 border-solid border-stone-900 bg-stone-900 p-2 px-4 text-base font-semibold text-stone-100 md:hidden'
+            className={twMerge(
+              'rounded-lg border-2 border-solid border-stone-900 bg-stone-900 p-2 px-4 text-base font-semibold text-stone-100 md:hidden',
+              hideLinks ? 'hidden' : '',
+            )}
           >
             Menu
           </button>
@@ -131,7 +129,7 @@ export default function Navbar() {
               <animated.a
                 key={index}
                 style={props}
-                onClick={() => setShowMenu((prev) => false)}
+                href='/contact'
                 className='m-4 rounded-lg border-2 border-solid border-stone-900 bg-stone-900 p-2 px-4 text-xl font-semibold text-stone-100'
               >
                 Contact Us
