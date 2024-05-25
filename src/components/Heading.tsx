@@ -1,15 +1,15 @@
-import React from "react"
-import { twMerge } from "tailwind-merge"
+import React from 'react'
+import { twMerge } from 'tailwind-merge'
 
 export default function Heading({
   className,
-  children
+  children,
 }: {
   className?: string
   children: React.ReactNode
 }) {
   return (
-    <h1 className={twMerge("heading font-semibold leading-tight", className)}>
+    <h1 className={twMerge('heading font-semibold leading-tight', className)}>
       {children}
     </h1>
   )

@@ -1,31 +1,34 @@
-import type { Metadata } from "next";
-import "./font.css";
-import "./globals.css";
+import type { Metadata } from 'next'
+import './font.css'
+import './globals.css'
 
 // Internal Dependencies
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
 
 // Constants
-import { TITLE as title, DESCRIPTION as description } from "@/constants/constants";
+import {
+  TITLE as title,
+  DESCRIPTION as description,
+} from '@/constants/constants'
 
 export const metadata: Metadata = {
   title,
-  description
-};
+  description,
+}
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-stone-50">
+    <html lang='en'>
+      <body className='min-h-screen bg-stone-50'>
         <Navbar />
         {children}
         <Footer />
       </body>
     </html>
-  );
+  )
 }
