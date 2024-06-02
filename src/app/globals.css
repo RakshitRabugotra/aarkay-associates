@@ -24,30 +24,18 @@
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3;
-
-    -webkit-column-width: 33%;
-    -moz-column-width: 33%;
-    column-width: 33%;
   }
 
   .gallery-col-2 {
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
-
-    -webkit-column-width: 50%;
-    -moz-column-width: 50%;
-    column-width: 50%;
   }
 
   .gallery-col-1 {
     -webkit-column-count: 1;
     -moz-column-count: 1;
     column-count: 1;
-
-    -webkit-column-width: 100%;
-    -moz-column-width: 100%;
-    column-width: 100%;
   }
 
   .picture {

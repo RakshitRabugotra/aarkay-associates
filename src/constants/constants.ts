@@ -223,14 +223,9 @@ export type SocialMedia = { name: string; svgSrc: string; href: string }
 
 export const SOCIALS: SocialMedia[] = [
   {
-    name: 'GitHub',
-    svgSrc: '/assets/socials/github.svg',
-    href: 'https://github.com/RakshitRabugotra',
-  },
-  {
     name: 'Instagram',
     svgSrc: '/assets/socials/instagram.svg',
-    href: 'https://www.instagram.com/rakshit.413/',
+    href: 'https://www.instagram.com/thisisbillgates/',
   },
   {
     name: 'Gmail',

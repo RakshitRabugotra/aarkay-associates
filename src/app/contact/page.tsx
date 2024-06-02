@@ -59,7 +59,7 @@ function SocialHandles() {
   return (
     <div className='flex flex-col px-8 md:p-8 lg:gap-6'>
       {SOCIALS.map((handle, index) => (
-        <a href={handle.href} key={index}>
+        <a href={handle.href} target='_blank' key={index}>
           <Heading className='inline-block basis-full text-5xl leading-relaxed transition-all duration-[.4s] ease-in-out hover:text-black/70 hover:underline lg:text-7xl'>
             {handle.name}
             <span className='mx-3 inline-block text-2xl'>
