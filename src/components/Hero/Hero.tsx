@@ -30,7 +30,7 @@ export default function Hero() {
   return (
     <Section id='hero-section' className='md:flex-row'>
       {/* Heading and description  */}
-      <div className='md:w-[60%]'>
+      <div className='flex flex-col justify-start md:w-[60%] xl:justify-evenly'>
         <Heading className='flex-col md:mt-12 md:text-9xl'>
           <animated.div ref={ref} style={springs}>
             {FIRM_NAME}

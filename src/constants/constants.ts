@@ -3,7 +3,7 @@ export const TITLE = 'Aarkay Associates — Build Dreams'
 export const FIRM_NAME = 'Aarkay Associates'
 export const FIRM_LOCATION = 'Pathankot'
 export const FIRM_INTRO =
-  "Crafting innovative designs, shaping inspirations for sustainable living in tomorrow's world timeless designs, shaping inspirations for Tomorrow's world"
+  "Crafting innovative designs, shaping inspirations for sustainable living in tomorrow's world. We specialize in creating timeless homes that blend beauty, functionality, and environmental responsibility."
 
 /* Logo of the page */
 export const LOGO_LIGHT = '/logo-white.svg'

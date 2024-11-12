@@ -15,16 +15,16 @@ export default function Section({
   children: React.ReactNode
 }) {
   return (
-    <div
+    <section
       id={id}
       className={twMerge(
-        fitHeight ? 'min-h-fit' : 'min-h-screen',
+        fitHeight ? 'min-h-fit' : 'h-screen max-h-[1080px]',
         'flex w-full flex-col gap-4 p-6',
         !noTopPadding ? 'pt-20' : '',
         className,
       )}
     >
       {children}
-    </div>
+    </section>
   )
 }

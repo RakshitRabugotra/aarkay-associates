@@ -20,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className='min-h-screen bg-stone-50'>{children}</body>
+      <body className='container mx-auto min-h-screen bg-stone-50 xl:px-8'>
+        {children}
+      </body>
     </html>
   )
 }

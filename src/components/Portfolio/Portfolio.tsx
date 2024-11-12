@@ -28,7 +28,7 @@ export default function Portfolio() {
   }))
 
   return (
-    <Section id={thisSection.id}>
+    <Section id={thisSection.id} className='pt-0'>
       <Heading className='flex w-full flex-row flex-wrap justify-between gap-4'>
         {thisSection.name}
         {/* See all button */}

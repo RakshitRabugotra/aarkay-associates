@@ -45,7 +45,7 @@ export default function Navbar({ hideLinks }: { hideLinks?: boolean }) {
 
   return (
     <>
-      <nav className='fixed z-30 inline-flex w-full items-center justify-between p-4 text-sm backdrop-blur-md'>
+      <nav className='container fixed z-30 mx-auto inline-flex w-full items-center justify-between p-4 text-sm backdrop-blur-md'>
         {/* The logo and name */}
         <Logo />
 
@@ -69,14 +69,16 @@ export default function Navbar({ hideLinks }: { hideLinks?: boolean }) {
 
         {/* The book demo */}
         <div className='inline-flex items-center gap-4'>
-          {DEMO_AVAILABLE && <a
-            className={twMerge(
-              'rounded-lg border-2 border-solid border-stone-300 bg-stone-300 p-2 text-base font-semibold text-stone-900',
-              'md:rounded-full md:px-4 md:text-xs',
-            )}
-          >
-            Book a Demo
-          </a>}
+          {DEMO_AVAILABLE && (
+            <a
+              className={twMerge(
+                'rounded-lg border-2 border-solid border-stone-300 bg-stone-300 p-2 text-base font-semibold text-stone-900',
+                'md:rounded-full md:px-4 md:text-xs',
+              )}
+            >
+              Book a Demo
+            </a>
+          )}
 
           {/* Contact Us if the screen is large enough, else hamburger */}
           <a
