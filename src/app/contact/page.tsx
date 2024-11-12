@@ -22,10 +22,7 @@ export default function ContactPage() {
       <Logo className='absolute m-4'>
         <Heading className='text-xl'>Contact Us</Heading>
       </Logo>
-      <Section
-        fitHeight
-        className='md:flex-row md:items-center md:justify-between'
-      >
+      <Section className='md:flex-row md:items-center md:justify-between'>
         <div className='basis-1/2'>
           <div>
             <p className='my-auto px-8 pt-6 text-justify text-lg font-normal md:p-8'>
@@ -46,7 +43,7 @@ export default function ContactPage() {
             width={600}
             height={600}
             className={
-              'm-auto aspect-square h-full rounded-full object-cover p-2'
+              'm-auto aspect-square h-full max-h-[600px] max-w-[600px] rounded-full object-cover shadow-lg'
             }
           />
         </div>
@@ -60,7 +57,7 @@ function SocialHandles() {
     <div className='flex flex-col px-8 md:p-8 lg:gap-6'>
       {SOCIALS.map((handle, index) => (
         <a href={handle.href} target='_blank' key={index}>
-          <Heading className='inline-block basis-full text-5xl leading-relaxed transition-all duration-[.4s] ease-in-out hover:text-black/70 hover:underline lg:text-7xl'>
+          <Heading className='inline-block basis-full text-5xl leading-relaxed transition-all duration-[.4s] ease-in-out hover:translate-x-[10%] hover:scale-110 hover:text-black/70 hover:underline lg:text-7xl'>
             {handle.name}
             <span className='mx-3 inline-block text-2xl'>
               <TbExternalLink />
